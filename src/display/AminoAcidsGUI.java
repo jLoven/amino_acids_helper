@@ -21,7 +21,7 @@ public class AminoAcidsGUI {
 		AminoAcidsInterface gui = new AminoAcidsInterface(listOfAminoAcids);
 		
 		gui.setTitle("u better learn the amino aceds");
-		gui.setSize(600, 600);
+		gui.setBounds(300, 300, 300, 300);
 		gui.setVisible(true);
 		gui.setDefaultCloseOperation(gui.EXIT_ON_CLOSE);
 	}  
