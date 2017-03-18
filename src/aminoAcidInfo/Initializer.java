@@ -4,10 +4,12 @@ import java.io.File;
 
 public class Initializer {
 
-	private static AminoAcidInfo[] listOfAminoAcids = new AminoAcidInfo[20];
+
 	static final File dir = new File("/Users/platypus/Desktop/random_stuff/code/java/amino_acids_helper/AminoAcidQuiz/images/");
 
-	public static void main(String[] args) {
+	public static AminoAcidInfo[] makeList() {
+
+		AminoAcidInfo[] listOfAminoAcids = new AminoAcidInfo[20];
 
 		for (int i = 0; i < listOfAminoAcids.length; i++) {
 			listOfAminoAcids[i] = new AminoAcidInfo();
@@ -37,11 +39,12 @@ public class Initializer {
 		for (AminoAcidInfo a : listOfAminoAcids) {
 			for (final File f : dir.listFiles()) {
 				if ((a.getName().trim() + ".gif").equalsIgnoreCase(f.getName().trim())) {
-					System.out.println(f.getName());
+					//  System.out.println(f.getName());
+					a.setImagePath(f);
 				}
 			}
 		}
-
+		
+		return listOfAminoAcids;
 	}
-
 }
